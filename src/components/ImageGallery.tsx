@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { HelpCircle, Plus, ArrowLeft, ArrowRight } from 'lucide-react';
+import React, { useState, useRef } from "react";
+import { HelpCircle, Plus, ArrowLeft, ArrowRight } from "lucide-react";
 
 interface Image {
   src: string;
@@ -8,9 +8,18 @@ interface Image {
 
 const ImageGallery: React.FC = () => {
   const [images, setImages] = useState<Image[]>([
-    { src: "https://images.unsplash.com/photo-1711931189505-2ea6ad031b14?q=80&w=1496&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Placeholder image 1" },
-    { src: "https://images.unsplash.com/photo-1532798210189-ca8e366884b9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Placeholder image 2" },
-    { src: "https://images.unsplash.com/photo-1676380249087-ba6fc4088575?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Placeholder image 3" },
+    {
+      src: "https://images.unsplash.com/photo-1711931189505-2ea6ad031b14?q=80&w=1496&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Placeholder image 1",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1532798210189-ca8e366884b9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Placeholder image 2",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1676380249087-ba6fc4088575?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Placeholder image 3",
+    },
   ]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -18,15 +27,18 @@ const ImageGallery: React.FC = () => {
     const file = event.target.files?.[0];
     if (file) {
       const imageUrl = URL.createObjectURL(file);
-      setImages([...images, { src: imageUrl, alt: `User uploaded image ${images.length + 1}` }]);
+      setImages([
+        ...images,
+        { src: imageUrl, alt: `User uploaded image ${images.length + 1}` },
+      ]);
     }
   };
 
-  const scroll = (direction: 'left' | 'right') => {
+  const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      const scrollAmount = direction === 'left' ? -220 : 220;
-      current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      const scrollAmount = direction === "left" ? -220 : 220;
+      current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
@@ -50,14 +62,14 @@ const ImageGallery: React.FC = () => {
           />
         </label>
         <div className="flex space-x-2 sm:space-x-3">
-          <button 
-            onClick={() => scroll('left')} 
-            className="p-2 sm:p-3 bg-[#1C1E20] rounded-full hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-xl active:bg-[#7B9ABE] focus:outline-none focus:ring-2 focus:ring-teal-500"
+          <button
+            onClick={() => scroll("left")}
+            className="p-2 sm:p-3 bg-[#1C1E20] rounded-full hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-xl active:bg-[#7B9ABE] focus:outline-none focus:ring-2 focus:ring-[#7B9ABE]"
           >
             <ArrowLeft size={18} className="text-gray-400" />
           </button>
-          <button 
-            onClick={() => scroll('right')} 
+          <button
+            onClick={() => scroll("right")}
             className="p-2 sm:p-3 bg-[#1C1E20] rounded-full hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-xl active:bg-[#7B9ABE] focus:outline-none focus:ring-2 focus:ring-[#7B9ABE]"
           >
             <ArrowRight size={18} className="text-gray-400" />
@@ -65,13 +77,13 @@ const ImageGallery: React.FC = () => {
         </div>
       </div>
 
-      <div 
-        ref={scrollRef} 
+      <div
+        ref={scrollRef}
         className="flex gap-3 sm:gap-4 overflow-x-auto pb-4 sm:pb-6 scrollbar-hide"
         style={{
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-          WebkitOverflowScrolling: 'touch',
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          WebkitOverflowScrolling: "touch",
         }}
       >
         {images.map((image, index) => (
@@ -92,4 +104,3 @@ const ImageGallery: React.FC = () => {
 };
 
 export default ImageGallery;
-

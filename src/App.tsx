@@ -1,12 +1,11 @@
-import ProfilePage from "./components/ProfilePage"
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
-
   return (
-    <main >
-     <ProfilePage />
+    <main>
+      <ProfilePage />
     </main>
-  )
+  );
 }
 
-export default App
+export default App;
