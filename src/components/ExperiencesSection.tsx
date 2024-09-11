@@ -1,6 +1,6 @@
 const ExperiencesSection = () => {
   return (
-    <div className="text-gray-400 mx-auto w-10/12 space-y-3">
+    <div className="text-gray-400 mx-auto w-11/12 space-y-3 h-44">
       <p>
         Experience content goes here...
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat fuga maxime molestias beatae, odit illum modi facere itaque sit vero molestiae.

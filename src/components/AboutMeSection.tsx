@@ -1,6 +1,6 @@
 const AboutMeSection = () => {
   return (
-    <div className="text-gray-400 mx-auto w-10/12 space-y-3">
+    <div className="text-gray-400 mx-auto w-11/12 space-y-3 h-44">
       <p>
         Hello! I'm Dave, your sales rep here from Salesforce. I've been working at this awesome company for 3 years now.
       </p>

@@ -11,6 +11,7 @@ const ProfilePage = () => {
       <div className="w-full md:w-1/2 p-6 space-y-6">
 
         <TabNavigation />
+        <div className="h-1 w-11/12 mx-auto rounded-full bg-[#363C43]"></div>
         <ImageGallery />
       </div>
     </div>

@@ -1,6 +1,6 @@
 const RecommendedSection = () => {
   return (
-    <div className="text-gray-400 mx-auto w-10/12 space-y-3" >
+    <div className="text-gray-400 mx-auto w-11/12 space-y-3 h-44" >
       <p>
         Recommended content goes here..
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum saepe tenetur assumenda temporibus consequuntur explicabo sequi sit nesciunt laborum nemo. Placeat, voluptatem mollitia?.
